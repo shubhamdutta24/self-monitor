@@ -1,0 +1,28 @@
+<html>
+<head><title>Self Monitoring</title></head>
+<body>
+<h1>Your upcoming Exam <span th:text="${examName}">EXAM</span>!</h1>
+
+<p>Only <span th:text="${examDays}">DAYS</span> days to go</p>
+<h3>Let's make a proper study plan</h3>
+
+<form action="#" method="post" th:action="@{/saveStudyPlan}" th:object="${studyPlan}">
+    <table border="1">
+        <tr>
+            <td><label th:text="#{studyPlan.current}"/></td>
+            <td><input th:field="*{current}" type="number"/></td>
+        </tr>
+        <tr>
+            <td><label th:text="#{studyPlan.target}"/></td>
+            <td><input th:field="*{target}" type="number"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit"/></td>
+        </tr>
+    </table>
+</form>
+<p><a th:href="@{/feedback}">submit feedback</a></p>
+<p><a th:href="@{/}">go back</a></p>
+
+</body>
+</html>

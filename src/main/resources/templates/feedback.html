@@ -1,0 +1,23 @@
+<html>
+<head><title>Self Monitoring</title></head>
+<body>
+<h1>Your decided to study <span th:text="${studyPlan.current}">TODAY'S TARGET HRS</span> hrs today.</h1>
+
+<h3>Let's retrospect!</h3>
+
+<form action="#" method="post" th:action="@{/saveFeedback}" th:object="${actualHrs}">
+    <table border="1">
+        <tr>
+            <td><label th:text="#{actualHrs.actual}"/></td>
+            <td><input th:field="*{actual}" type="number"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit"/></td>
+        </tr>
+    </table>
+</form>
+
+<p><a th:href="@{/}">go back</a></p>
+
+</body>
+</html>
