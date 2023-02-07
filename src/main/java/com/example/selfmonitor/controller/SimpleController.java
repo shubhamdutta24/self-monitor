@@ -31,7 +31,7 @@ public class SimpleController {
     @GetMapping("/")
     public String homePage(Model model) {
         model.addAttribute("appName", appName);
-//        model.addAttribute("exam", exam);
+        model.addAttribute("exam", exam);
         return "home";
     }
 
@@ -61,7 +61,7 @@ public class SimpleController {
     @PostMapping("/saveFeedback")
     public String saveFeedback(@ModelAttribute StudyDuration actualHrs, BindingResult errors, Model model) {
         this.studyDuration.setActual(actualHrs.getActual());
-//        this.studyDuration = studyDurationRepository.save(studyDuration);
+        this.studyDuration = studyDurationRepository.save(studyDuration);
         return "redirect:/result";
     }
 
